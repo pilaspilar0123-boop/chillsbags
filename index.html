@@ -1,513 +1,729 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
-  <meta name="facebook-domain-verification" content="x4ejaz0o16zl3vat4bqs1cplz75djg" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GIOCONEX - Ropa Deportiva de Alta Calidad</title>
+  <meta name="facebook-domain-verification" content="uhxvd8z31w2d4qskica8xz67lcjytz" />
+  <title>Chillbags - Bolsos y Accesorios de Moda</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600;800&display=swap" rel="stylesheet">
   <style>
-    /* Custom scrollbar for horizontal testimonial section */
-    .scrollbar-hide::-webkit-scrollbar {
-      display: none;
-    }
-    .scrollbar-hide {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
+    body {
+      font-family: 'Exo 2', sans-serif;
     }
     
-    /* Hero background with overlay */
-    .hero-bg {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-    }
-    
-    /* Professional card shadows */
-    .professional-card {
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-      transition: all 0.4s ease;
-    }
-    
-    .professional-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+    .orbitron {
+      font-family: 'Orbitron', monospace;
     }
 
-    /* Gradient text effect */
-    .gradient-text {
-      background: linear-gradient(135deg, #ff6b35, #f7931e);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    /* Animated border */
-    .animated-border {
+    /* Modern Fashion Theme */
+    .cyber-bg {
+      background: linear-gradient(135deg, #1a0f0f 0%, #2d1b1b 25%, #3d2a2a 50%, #2d1b1b 75%, #0a0505 100%);
       position: relative;
+      overflow: hidden;
     }
     
-    .animated-border::before {
+    .cyber-bg::before {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      border-radius: inherit;
-      padding: 2px;
-      background: linear-gradient(135deg, #ff6b35, #f7931e);
-      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      mask-composite: exclude;
+      background-image: 
+        radial-gradient(circle at 20% 50%, #c9a96122 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, #d4a57422 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, #b8860baa 0%, transparent 50%);
+      opacity: 0.6;
+      z-index: 1;
+    }
+    
+    .cyber-content {
+      position: relative;
+      z-index: 2;
+    }
+    
+    /* Modern glow effects */
+    .neon-cyan {
+      color: #c9a961;
+      text-shadow: 0 0 10px #c9a961, 0 0 20px #c9a961, 0 0 30px #c9a961;
+    }
+    
+    .neon-pink {
+      color: #d4a574;
+      text-shadow: 0 0 10px #d4a574, 0 0 20px #d4a574, 0 0 30px #d4a574;
+    }
+    
+    .neon-yellow {
+      color: #b8860b;
+      text-shadow: 0 0 10px #b8860b, 0 0 20px #b8860b, 0 0 30px #b8860b;
     }
 
-    /* WhatsApp button floating */
-    .whatsapp-float {
-      position: fixed;
-      width: 80px;
-      height: 80px;
-      bottom: 40px;
-      right: 40px;
-      background-color: #25d366;
-      color: #FFF;
-      border-radius: 50px;
-      text-align: center;
-      font-size: 30px;
-      box-shadow: 2px 2px 3px #999;
-      z-index: 100;
-      animation: pulse 2s infinite;
+    /* Geometric shapes */
+    .diamond {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(45deg, #c9a961, #d4a574);
+      transform: rotate(45deg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    
+    .diamond-content {
+      transform: rotate(-45deg);
+    }
+
+    /* Fashion cards */
+    .cyber-card {
+      background: linear-gradient(145deg, #2d1b1b, #3d2a2a);
+      border: 2px solid #c9a961;
+      box-shadow: 
+        0 0 20px rgba(201, 169, 97, 0.3),
+        inset 0 0 20px rgba(201, 169, 97, 0.1);
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cyber-card::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, #c9a961, #d4a574, #b8860b, #c9a961);
+      background-size: 400% 400%;
+      animation: neonBorder 3s ease infinite;
+      z-index: -1;
+      border-radius: inherit;
+    }
+    
+    .cyber-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 
+        0 20px 40px rgba(201, 169, 97, 0.4),
+        0 0 30px rgba(212, 165, 116, 0.3);
+      border-color: #d4a574;
+    }
+
+    @keyframes neonBorder {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Fashion grid pattern */
+    .circuit-bg {
+      background-image: 
+        linear-gradient(90deg, #c9a96133 1px, transparent 1px),
+        linear-gradient(0deg, #c9a96133 1px, transparent 1px);
+      background-size: 50px 50px;
+      position: relative;
+    }
+    
+    .circuit-bg::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 25% 25%, #d4a57444 2px, transparent 2px),
+        radial-gradient(circle at 75% 75%, #b8860b44 2px, transparent 2px);
+      background-size: 50px 50px;
+    }
+
+    /* Glitch effect */
+    .glitch {
+      position: relative;
+      animation: glitch 2s infinite;
+    }
+    
+    @keyframes glitch {
+      0% { transform: translate(0); }
+      20% { transform: translate(-2px, 2px); }
+      40% { transform: translate(-2px, -2px); }
+      60% { transform: translate(2px, 2px); }
+      80% { transform: translate(2px, -2px); }
+      100% { transform: translate(0); }
+    }
+
+    /* Pulse animation */
+    .pulse-neon {
+      animation: pulseNeon 2s ease-in-out infinite;
+    }
+    
+    @keyframes pulseNeon {
+      0%, 100% { 
+        box-shadow: 0 0 20px #c9a961, 0 0 40px #c9a961;
+        border-color: #c9a961;
+      }
+      50% { 
+        box-shadow: 0 0 30px #d4a574, 0 0 60px #d4a574;
+        border-color: #d4a574;
+      }
+    }
+
+    /* Sliding panels */
+    .slide-panel {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+      border-left: 4px solid #c9a961;
+      transform: skewX(-5deg);
       transition: all 0.3s ease;
     }
-
-    .whatsapp-float:hover {
-      transform: scale(1.1);
-      background-color: #20ba5a;
+    
+    .slide-panel:hover {
+      transform: skewX(0deg) translateX(10px);
+      border-left-color: #d4a574;
+    }
+    
+    .slide-content {
+      transform: skewX(5deg);
     }
 
-    @keyframes pulse {
-      0% {
+    /* Matrix rain effect */
+    .matrix-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 98px,
+        rgba(201, 169, 97, 0.03) 100px
+      );
+      animation: matrixRain 20s linear infinite;
+    }
+    
+    @keyframes matrixRain {
+      0% { transform: translateY(-100%); }
+      100% { transform: translateY(100%); }
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: #111;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(to bottom, #c9a961, #d4a574);
+      border-radius: 4px;
+    }
+
+    /* WhatsApp button fashion style */
+    .whatsapp-cyber {
+      background: linear-gradient(135deg, #25d366, #128c7e, #c9a961);
+      animation: cyberpulse 2s infinite;
+      border: 2px solid #c9a961;
+      box-shadow: 0 0 20px rgba(201, 169, 97, 0.5);
+    }
+    
+    @keyframes cyberpulse {
+      0%, 100% {
         transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+        box-shadow: 0 0 20px rgba(201, 169, 97, 0.5);
       }
-      70% {
-        transform: scale(1.05);
-        box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+      50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 30px rgba(212, 165, 116, 0.7);
       }
-      100% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-      }
+    }
+
+    /* Typewriter effect */
+    .typewriter {
+      overflow: hidden;
+      border-right: 3px solid #c9a961;
+      white-space: nowrap;
+      animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+    }
+    
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    
+    @keyframes blink-caret {
+      from, to { border-color: transparent; }
+      50% { border-color: #c9a961; }
     }
   </style>
 </head>
-<body class="bg-gray-900 text-gray-100 font-sans leading-relaxed">
+<body class="bg-black text-white overflow-x-hidden">
 
-  <!-- WHATSAPP FLOATING BUTTON -->
-  <a href="https://wa.me/5492236025707" target="_blank" class="whatsapp-float">
-    <div style="margin-top: 22px;">
-      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
-        <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.777-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.336-.445-.342-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
-      </svg>
-    </div>
-  </a>
+  <!-- MATRIX BACKGROUND EFFECT -->
+  <div class="matrix-bg fixed inset-0 pointer-events-none z-0"></div>
 
-  <!-- HEADER WITH HERO BACKGROUND -->
-  <header class="hero-bg text-white sticky top-0 z-30">
-    <div class="max-w-7xl mx-auto px-6 md:px-12 py-10">
-      <div class="flex flex-col lg:flex-row items-center justify-between">
-        <div class="text-center lg:text-left mb-8 lg:mb-0">
-          <h1 class="text-5xl md:text-6xl font-black tracking-tight mb-3">
-            <span class="gradient-text">GIOCONEX</span>
-          </h1>
-          <p class="text-orange-200 italic text-xl md:text-2xl mb-6">Ropa Deportiva de Alta Calidad</p>
-          <div class="mt-6 space-y-2 text-base text-gray-200 bg-black/30 p-4 rounded-lg backdrop-blur-sm">
-            <p>📍 Pigue 1910, Mar del Plata</p>
-            <p>📧 gioconex@gmail.com</p>
-            <p>📱 +54 9 223 602-5707</p>
-            <p>🏪 Tienda de Ropa Deportiva</p>
+  <!-- CYBER HEADER -->
+  <header class="cyber-bg min-h-screen flex items-center relative">
+    <div class="cyber-content w-full">
+      
+      <!-- Cyber Navigation -->
+      <nav class="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-xl border-b-2 border-yellow-600">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+          <div class="flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center">
+              <div class="diamond mr-4 pulse-neon">
+                <div class="diamond-content text-black font-bold">C</div>
+              </div>
+              <span class="text-2xl font-black orbitron neon-cyan">Chillbags</span>
+            </div>
+            
+            <!-- Menu -->
+            <ul class="hidden md:flex space-x-8 text-yellow-500 font-bold orbitron">
+            <li><a href="#inicio" class="hover:text-yellow-400 transition duration-300 relative group">
+                ▶ INICIO
+              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-400 group-hover:w-full transition-all duration-300"></span>
+            </a></li>
+            <li><a href="#nosotros" class="hover:text-yellow-400 transition duration-300 relative group">
+                ▶ NOSOTROS
+              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-400 group-hover:w-full transition-all duration-300"></span>
+            </a></li>
+              <li><a href="#servicios" class="hover:text-yellow-400 transition duration-300 relative group">
+                ▶ SERVICIOS
+              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-400 group-hover:w-full transition-all duration-300"></span>
+            </a></li>
+              <li><a href="#contacto" class="hover:text-yellow-400 transition duration-300 relative group">
+                ▶ CONTACTO
+              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-400 group-hover:w-full transition-all duration-300"></span>
+            </a></li>
+          </ul>
           </div>
         </div>
-        <nav class="mt-6 lg:mt-0">
-          <ul class="flex flex-wrap justify-center space-x-6 md:space-x-10 text-orange-300 text-lg font-semibold">
-            <li><a href="#empresa" class="hover:text-yellow-400 transition duration-300 hover:scale-110 transform">Nosotros</a></li>
-            <li><a href="#productos" class="hover:text-yellow-400 transition duration-300 hover:scale-110 transform">Productos</a></li>
-            <li><a href="#galeria" class="hover:text-yellow-400 transition duration-300 hover:scale-110 transform">Galería</a></li>
-            <li><a href="#testimonios" class="hover:text-yellow-400 transition duration-300 hover:scale-110 transform">Testimonios</a></li>
-          </ul>
-        </nav>
+      </nav>
+
+      <!-- Hero Section -->
+      <div class="max-w-7xl mx-auto px-6 py-20 mt-20">
+        <div class="grid lg:grid-cols-2 gap-16 items-center min-h-[80vh]">
+          
+          <!-- Left Content -->
+            <div class="text-center lg:text-left">
+            <div class="mb-8">
+              <h1 class="text-8xl md:text-9xl font-black orbitron glitch mb-4">
+                <span class="neon-cyan">CHILL</span>
+                <br>
+                <span class="neon-pink">BAGS</span>
+          </h1>
+              <div class="typewriter text-2xl md:text-3xl text-yellow-500 font-bold">
+                BOLSOS Y ACCESORIOS DE MODA
+              </div>
+              </div>
+              
+            <!-- Fashion Stats -->
+            <div class="grid grid-cols-2 gap-6 mb-12">
+              <div class="cyber-card p-6 rounded-lg">
+                <div class="text-4xl neon-cyan mb-2 orbitron font-black">100%</div>
+                <div class="text-gray-300">CALIDAD</div>
+                </div>
+              <div class="cyber-card p-6 rounded-lg">
+                <div class="text-4xl neon-pink mb-2 orbitron font-black">MODA</div>
+                <div class="text-gray-300">ACTUAL</div>
+                </div>
+              <div class="cyber-card p-6 rounded-lg">
+                <div class="text-4xl neon-yellow mb-2 orbitron font-black">ESTILO</div>
+                <div class="text-gray-300">ÚNICO</div>
+                </div>
+              <div class="cyber-card p-6 rounded-lg">
+                <div class="text-4xl neon-cyan mb-2 orbitron font-black">PREMIUM</div>
+                <div class="text-gray-300">MATERIALES</div>
+              </div>
+            </div>
+
+            <!-- CTA Button -->
+            <button class="cyber-card px-12 py-6 rounded-lg text-xl font-bold orbitron neon-cyan border-2 border-yellow-600 hover:bg-yellow-600 hover:text-black transition-all duration-300">
+              ▶ CONTACTAR AHORA
+            </button>
+          </div>
+
+          <!-- Right Content - Cyber Image -->
+            <div class="relative">
+            <div class="cyber-card p-8 rounded-2xl">
+                <img 
+                src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2125&q=80" 
+                alt="Bolsos de moda elegantes" 
+                class="w-full h-96 object-cover rounded-lg"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-yellow-600/20 via-transparent to-yellow-700/20 rounded-2xl"></div>
+              </div>
+            
+            <!-- Floating elements -->
+            <div class="absolute -top-6 -right-6 diamond pulse-neon">
+              <div class="diamond-content text-black font-bold">⚡</div>
+              </div>
+            <div class="absolute -bottom-6 -left-6 diamond pulse-neon" style="animation-delay: 1s;">
+              <div class="diamond-content text-black font-bold">🌙</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </header>
 
-  <main class="max-w-7xl mx-auto px-6 md:px-12 py-20 space-y-28">
-
-    <!-- NOSOTROS -->
-    <section id="empresa" aria-labelledby="empresa-title" class="prose prose-lg max-w-none">
-      <div class="text-center mb-16">
-        <h2 id="empresa-title" class="text-5xl md:text-6xl font-bold mb-8 text-gray-100">
-          <span class="gradient-text">Sobre GIOCONEX</span>
-        </h2>
-        <div class="w-32 h-2 bg-gradient-to-r from-orange-500 to-yellow-500 mx-auto rounded-full"></div>
+  <!-- ABOUT SECTION - CIRCUIT BOARD DESIGN -->
+  <section id="nosotros" class="circuit-bg py-32 bg-gray-900 relative">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-20">
+        <h2 class="text-6xl font-black orbitron neon-pink glitch mb-8">QUIÉNES SOMOS</h2>
+        <div class="w-32 h-1 bg-gradient-to-r from-yellow-600 to-yellow-700 mx-auto"></div>
       </div>
       
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
-        <div class="space-y-8">
-          <p class="text-xl text-gray-100 leading-relaxed">
-            <strong class="text-orange-400">GIOCONEX</strong> es tu destino premium para ropa deportiva de alta calidad. 
-            Nos especializamos en ofrecer las mejores marcas y diseños para que puedas destacar en cualquier actividad física.
-          </p>
-          <p class="text-xl text-gray-100 leading-relaxed">
-            Nuestra pasión por el deporte se refleja en cada prenda que ofrecemos. Desde ropa para el gimnasio hasta equipamiento 
-            para deportes específicos, tenemos todo lo que necesitas para alcanzar tu máximo rendimiento.
-          </p>
-          <p class="text-xl text-gray-100 leading-relaxed">
-            En <strong class="text-yellow-400">GIOCONEX</strong>, creemos que la calidad y el estilo van de la mano. 
-            Por eso seleccionamos cuidadosamente cada producto para garantizar durabilidad, comodidad y un diseño excepcional.
-          </p>
+      <!-- Sliding panels layout -->
+      <div class="grid lg:grid-cols-3 gap-8">
+        
+        <!-- Panel 1 -->
+        <div class="slide-panel p-8 rounded-lg">
+          <div class="slide-content">
+            <div class="diamond mb-6 mx-auto">
+              <div class="diamond-content text-black font-bold text-xl">🔮</div>
+            </div>
+            <h3 class="text-2xl font-bold orbitron neon-cyan mb-4">ESTILO ÚNICO</h3>
+            <p class="text-gray-300">Creamos bolsos y accesorios que reflejan tu personalidad con diseños modernos y de calidad superior.</p>
+          </div>
         </div>
-        <div class="relative">
+        
+        <!-- Panel 2 -->
+        <div class="slide-panel p-8 rounded-lg" style="transform: skewX(5deg);">
+          <div class="slide-content">
+            <div class="diamond mb-6 mx-auto">
+              <div class="diamond-content text-black font-bold text-xl">🚀</div>
+            </div>
+            <h3 class="text-2xl font-bold orbitron neon-pink mb-4">CALIDAD</h3>
+            <p class="text-gray-300">Seleccionamos los mejores materiales y técnicas de confección para garantizar durabilidad y elegancia.</p>
+            </div>
+        </div>
+
+        <!-- Panel 3 -->
+        <div class="slide-panel p-8 rounded-lg">
+          <div class="slide-content">
+            <div class="diamond mb-6 mx-auto">
+              <div class="diamond-content text-black font-bold text-xl">⚡</div>
+                </div>
+            <h3 class="text-2xl font-bold orbitron neon-yellow mb-4">MODA</h3>
+            <p class="text-gray-300">Seguimos las últimas tendencias para ofrecerte productos que complementen tu estilo personal.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Central Image -->
+      <div class="flex justify-center mt-16">
+        <div class="cyber-card p-6 rounded-2xl">
           <img 
-            src="https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-            alt="Ropa deportiva de calidad" 
-            class="rounded-2xl shadow-2xl professional-card"
+            src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+            alt="Colección de bolsos Chillbags" 
+            class="w-full max-w-2xl h-64 object-cover rounded-lg"
           />
-          <div class="absolute -bottom-6 -right-6 bg-gradient-to-r from-orange-500 to-yellow-500 text-white px-8 py-4 rounded-xl shadow-xl">
-            <p class="font-bold text-lg">Más de 5 años</p>
-            <p class="text-sm">en el mercado</p>
-          </div>
         </div>
-      </div>
-      
-      <div class="mt-16 bg-gradient-to-br from-gray-800 to-gray-900 p-10 rounded-2xl shadow-2xl professional-card animated-border">
-        <div class="grid lg:grid-cols-2 gap-10">
-          <div>
-            <h3 class="text-3xl font-bold text-orange-300 mb-6">Nuestra Ubicación</h3>
-            <p class="text-xl text-gray-100 mb-6">
-              Nos encontramos en <strong class="text-yellow-400">Pigue 1910, Mar del Plata</strong>, 
-              un espacio amplio y moderno donde podrás ver y probar toda nuestra colección de ropa deportiva.
-            </p>
-          </div>
-          <div>
-            <h3 class="text-3xl font-bold text-yellow-300 mb-6">Nuestra Misión</h3>
-            <p class="text-xl text-gray-100">
-              Equipar a deportistas y amantes del fitness con la mejor ropa deportiva, combinando funcionalidad, 
-              comodidad y estilo para que puedas superar tus límites con confianza.
-            </p>
-          </div>
         </div>
       </div>
     </section>
 
-    <!-- PRODUCTOS -->
-    <section id="productos" aria-labelledby="productos-title" class="max-w-none">
+  <!-- SERVICES SECTION - GRID CYBER DESIGN -->
+  <section id="servicios" class="bg-black py-32 relative">
+    <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-20">
-        <h2 id="productos-title" class="text-5xl md:text-6xl font-bold mb-8 text-gray-100">
-          <span class="gradient-text">Nuestros Productos</span>
-        </h2>
-        <div class="w-32 h-2 bg-gradient-to-r from-orange-500 to-yellow-500 mx-auto mb-10 rounded-full"></div>
-        <p class="text-2xl text-gray-200 max-w-4xl mx-auto">Ropa deportiva de alta calidad para todas tus actividades</p>
+        <h2 class="text-6xl font-black orbitron neon-cyan glitch mb-8">PRODUCTOS Chillbags</h2>
+        <div class="w-32 h-1 bg-gradient-to-r from-yellow-600 to-yellow-700 mx-auto"></div>
       </div>
       
-      <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3 max-w-7xl">
+      <!-- Cyber Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         
-        <!-- Producto 1 -->
-        <article class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-10 shadow-2xl professional-card animated-border">
-          <div class="text-center mb-8">
-            <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-                 alt="Remeras deportivas" class="w-full h-48 rounded-xl mx-auto mb-6 object-cover" />
-            <h3 class="text-2xl font-bold text-orange-300 mb-4">Remeras Deportivas</h3>
+        <!-- Service 1 -->
+        <div class="cyber-card p-8 rounded-2xl group">
+          <div class="diamond mb-6">
+            <div class="diamond-content text-black font-bold text-xl">📞</div>
+            </div>
+            <img 
+            src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+            alt="Bolsos elegantes de moda" 
+            class="w-full h-48 object-cover rounded-lg mb-6"
+          />
+          <h3 class="text-2xl font-bold orbitron neon-pink mb-4">BOLSOS ELEGANTES</h3>
+          <p class="text-gray-300 mb-4">Diseños exclusivos en diferentes estilos y tamaños para todas tus ocasiones.</p>
+              <div class="flex items-center text-yellow-500">
+            <span class="mr-2">▶</span>
+            <span class="text-sm font-bold">DISEÑO ÚNICO</span>
           </div>
-          <p class="text-gray-200 mb-6 text-center">Remeras de alta tecnología con tejidos transpirables y diseños modernos.</p>
-          <ul class="list-disc list-inside space-y-3 text-gray-100">
-            <li>Telas que absorben la humedad</li>
-            <li>Cortes ergonómicos</li>
-            <li>Variedad de colores y talles</li>
-            <li>Ideal para gimnasio y running</li>
-          </ul>
-        </article>
-
-        <!-- Producto 2 -->
-        <article class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-10 shadow-2xl professional-card animated-border">
-          <div class="text-center mb-8">
-            <img src="https://images.unsplash.com/photo-1506629905880-b2ce5d6c2476?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-                 alt="Pantalones deportivos" class="w-full h-48 rounded-xl mx-auto mb-6 object-cover" />
-            <h3 class="text-2xl font-bold text-yellow-300 mb-4">Pantalones Deportivos</h3>
           </div>
-          <p class="text-gray-200 mb-6 text-center">Pantalones cómodos y resistentes para todo tipo de entrenamientos.</p>
-          <ul class="list-disc list-inside space-y-3 text-gray-100">
-            <li>Máxima libertad de movimiento</li>
-            <li>Materiales duraderos</li>
-            <li>Diseños clásicos y modernos</li>
-            <li>Para todos los deportes</li>
-          </ul>
-        </article>
-
-        <!-- Producto 3 -->
-        <article class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-10 shadow-2xl professional-card animated-border">
-          <div class="text-center mb-8">
-            <img src="https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-                 alt="Zapatillas deportivas" class="w-full h-48 rounded-xl mx-auto mb-6 object-cover" />
-            <h3 class="text-2xl font-bold text-orange-300 mb-4">Zapatillas Deportivas</h3>
+        
+        <!-- Service 2 -->
+        <div class="cyber-card p-8 rounded-2xl group">
+          <div class="diamond mb-6">
+            <div class="diamond-content text-black font-bold text-xl">🎯</div>
           </div>
-          <p class="text-gray-200 mb-6 text-center">Calzado deportivo de las mejores marcas para máximo rendimiento.</p>
-          <ul class="list-disc list-inside space-y-3 text-gray-100">
-            <li>Tecnología de amortiguación</li>
-            <li>Suela antideslizante</li>
-            <li>Diseños de vanguardia</li>
-            <li>Para running, fitness y más</li>
-          </ul>
-        </article>
-
-        <!-- Producto 4 -->
-        <article class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-10 shadow-2xl professional-card animated-border">
-          <div class="text-center mb-8">
-            <img src="https://images.unsplash.com/photo-1506629905880-b2ce5d6c2476?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-                 alt="Ropa de entrenamiento" class="w-full h-48 rounded-xl mx-auto mb-6 object-cover" />
-            <h3 class="text-2xl font-bold text-yellow-300 mb-4">Ropa de Entrenamiento</h3>
+          <img 
+            src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&auto=format&fit=crop&w=2015&q=80" 
+            alt="Mochilas modernas y estilosas" 
+            class="w-full h-48 object-cover rounded-lg mb-6"
+          />
+          <h3 class="text-2xl font-bold orbitron neon-yellow mb-4">MOCHILAS MODERNAS</h3>
+          <p class="text-gray-300 mb-4">Perfectas para el día a día, combinando funcionalidad y estilo contemporáneo.</p>
+          <div class="flex items-center text-orange-400">
+            <span class="mr-2">▶</span>
+            <span class="text-sm font-bold">PRÁCTICAS Y ESTILOSAS</span>
           </div>
-          <p class="text-gray-200 mb-6 text-center">Conjuntos completos para entrenamientos intensos y deportes específicos.</p>
-          <ul class="list-disc list-inside space-y-3 text-gray-100">
-            <li>Kits completos disponibles</li>
-            <li>Ropa técnica especializada</li>
-            <li>Ajuste perfecto</li>
-            <li>Resistente al lavado</li>
-          </ul>
-        </article>
-
-        <!-- Producto 5 -->
-        <article class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-10 shadow-2xl professional-card animated-border">
-          <div class="text-center mb-8">
-            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-                 alt="Accesorios deportivos" class="w-full h-48 rounded-xl mx-auto mb-6 object-cover" />
-            <h3 class="text-2xl font-bold text-orange-300 mb-4">Accesorios Deportivos</h3>
-          </div>
-          <p class="text-gray-200 mb-6 text-center">Complementa tu outfit deportivo con nuestros accesorios de calidad.</p>
-          <ul class="list-disc list-inside space-y-3 text-gray-100">
-            <li>Gorras y vinchas</li>
-            <li>Guantes y muñequeras</li>
-            <li>Medias deportivas</li>
-            <li>Bolsos y mochilas</li>
-          </ul>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- GALERÍA -->
-    <section id="galeria" aria-labelledby="galeria-title" class="max-w-none">
-      <div class="text-center mb-20">
-        <h2 id="galeria-title" class="text-5xl md:text-6xl font-bold mb-8 text-gray-100">
-          <span class="gradient-text">Galería</span>
-        </h2>
-        <div class="w-32 h-2 bg-gradient-to-r from-orange-500 to-yellow-500 mx-auto mb-10 rounded-full"></div>
-        <p class="text-2xl text-gray-200 max-w-4xl mx-auto">Conoce nuestros productos en acción</p>
       </div>
       
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        <div class="professional-card rounded-2xl overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
-               alt="Ropa deportiva 1" class="w-full h-48 object-cover" />
-            </div>
-        <div class="professional-card rounded-2xl overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
-               alt="Ropa deportiva 2" class="w-full h-48 object-cover" />
+        <!-- Service 3 -->
+        <div class="cyber-card p-8 rounded-2xl group">
+          <div class="diamond mb-6">
+            <div class="diamond-content text-black font-bold text-xl">🤖</div>
           </div>
-        <div class="professional-card rounded-2xl overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
-               alt="Ropa deportiva 3" class="w-full h-48 object-cover" />
-            </div>
-        <div class="professional-card rounded-2xl overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1506629905880-b2ce5d6c2476?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
-               alt="Ropa deportiva 4" class="w-full h-48 object-cover" />
+          <img 
+            src="https://images.unsplash.com/photo-1624222247344-550fb60583fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+            alt="Carteras y billeteras elegantes" 
+            class="w-full h-48 object-cover rounded-lg mb-6"
+          />
+          <h3 class="text-2xl font-bold orbitron neon-cyan mb-4">CARTERAS Y BILLETERAS</h3>
+          <p class="text-gray-300 mb-4">Accesorios compactos y organizados para llevar tus pertenencias con estilo.</p>
+              <div class="flex items-center text-yellow-500">
+            <span class="mr-2">▶</span>
+            <span class="text-sm font-bold">COMPACTAS Y ELEGANTES</span>
           </div>
-        <div class="professional-card rounded-2xl overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
-               alt="Ropa deportiva 5" class="w-full h-48 object-cover" />
-            </div>
-        <div class="professional-card rounded-2xl overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1540479859555-17af45c78602?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
-               alt="Ropa deportiva 6" class="w-full h-48 object-cover" />
           </div>
-        <div class="professional-card rounded-2xl overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
-               alt="Ropa deportiva 7" class="w-full h-48 object-cover" />
-            </div>
-        <div class="professional-card rounded-2xl overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
-               alt="Ropa deportiva 8" class="w-full h-48 object-cover" />
+          
+        <!-- Service 4 -->
+        <div class="cyber-card p-8 rounded-2xl group">
+          <div class="diamond mb-6">
+            <div class="diamond-content text-black font-bold text-xl">📊</div>
+          </div>
+          <img 
+            src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+            alt="Bolsos de mano premium" 
+            class="w-full h-48 object-cover rounded-lg mb-6"
+          />
+          <h3 class="text-2xl font-bold orbitron neon-pink mb-4">BOLSOS DE MANO</h3>
+          <p class="text-gray-300 mb-4">Ideales para eventos especiales, con diseños sofisticados y materiales premium.</p>
+              <div class="flex items-center text-yellow-600">
+            <span class="mr-2">▶</span>
+            <span class="text-sm font-bold">ELEGANCIA PREMIUM</span>
+          </div>
+          </div>
+          
+        <!-- Service 5 -->
+        <div class="cyber-card p-8 rounded-2xl group">
+          <div class="diamond mb-6">
+            <div class="diamond-content text-black font-bold text-xl">🔐</div>
+          </div>
+          <img 
+            src="https://images.unsplash.com/photo-1601925260368-ae2f83d02f18?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+            alt="Accesorios de moda variados" 
+            class="w-full h-48 object-cover rounded-lg mb-6"
+          />
+          <h3 class="text-2xl font-bold orbitron neon-yellow mb-4">ACCESORIOS VARIADOS</h3>
+          <p class="text-gray-300 mb-4">Completa tu look con nuestra línea de accesorios complementarios de alta calidad.</p>
+          <div class="flex items-center text-orange-400">
+            <span class="mr-2">▶</span>
+            <span class="text-sm font-bold">VARIEDAD DE ESTILOS</span>
+          </div>
+          </div>
+          
+        <!-- Service 6 -->
+        <div class="cyber-card p-8 rounded-2xl group">
+          <div class="diamond mb-6">
+            <div class="diamond-content text-black font-bold text-xl">🌐</div>
+          </div>
+          <img 
+            src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2134&q=80" 
+            alt="Envíos y logística" 
+            class="w-full h-48 object-cover rounded-lg mb-6"
+          />
+          <h3 class="text-2xl font-bold orbitron neon-cyan mb-4">ENVÍOS A TODO EL PAÍS</h3>
+          <p class="text-gray-300 mb-4">Llevamos nuestros productos a cada rincón del país con envíos seguros y rápidos.</p>
+              <div class="flex items-center text-yellow-500">
+            <span class="mr-2">▶</span>
+            <span class="text-sm font-bold">ENTREGA RÁPIDA</span>
+          </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- TESTIMONIOS -->
-    <section id="testimonios" aria-labelledby="testimonios-title" class="max-w-none">
+  <!-- TESTIMONIALS - HOLOGRAPHIC DESIGN -->
+  <section class="cyber-bg py-32 relative">
+      <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-20">
-        <h2 id="testimonios-title" class="text-5xl md:text-6xl font-bold mb-8 text-gray-100">
-          <span class="gradient-text">Testimonios</span>
-        </h2>
-        <div class="w-32 h-2 bg-gradient-to-r from-orange-500 to-yellow-500 mx-auto mb-10 rounded-full"></div>
-        <p class="text-2xl text-gray-200 max-w-4xl mx-auto">Lo que dicen nuestros clientes sobre GIOCONEX</p>
-      </div>
+        <h2 class="text-6xl font-black orbitron neon-pink glitch mb-8">TESTIMONIOS Chillbags</h2>
+        <div class="w-32 h-1 bg-gradient-to-r from-yellow-700 to-yellow-600 mx-auto"></div>
+            </div>
       
-      <div class="flex space-x-8 overflow-x-auto scrollbar-hide max-w-7xl px-6 md:px-0 py-6">
-
-        <article class="min-w-[380px] md:min-w-[420px] bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-10 shadow-2xl professional-card animated-border">
-          <div class="flex items-start space-x-6 mb-8">
-            <img 
-              class="w-20 h-20 rounded-full border-4 border-orange-400 flex-shrink-0 object-cover" 
-              src="https://randomuser.me/api/portraits/women/25.jpg" 
-              alt="Foto de María González"
-              loading="lazy"
+      <!-- Holographic testimonials -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <div class="cyber-card p-8 rounded-2xl">
+              <div class="flex items-center mb-6">
+                <img 
+              class="w-16 h-16 rounded-full border-4 border-yellow-600 mr-4" 
+              src="https://randomuser.me/api/portraits/women/32.jpg" 
+              alt="Elena Rodriguez"
             />
             <div>
-              <h4 class="font-bold text-orange-300 text-xl">María González</h4>
-              <p class="text-yellow-400 text-base font-semibold">Atleta Amateur</p>
-              <p class="text-gray-200 text-sm">Mar del Plata</p>
+              <h4 class="font-bold orbitron neon-cyan text-lg">Elena Rodriguez</h4>
+              <p class="text-yellow-500 text-sm">Cliente Satisfecha</p>
+                </div>
+              </div>
+          <p class="text-gray-300 italic">"Chillbags tiene los bolsos más hermosos y de mejor calidad. Siempre recibo cumplidos cuando los uso."</p>
+              <div class="flex mt-4">
+            <span class="neon-yellow">★★★★★</span>
+              </div>
             </div>
-          </div>
-          <p class="italic text-gray-100 text-lg leading-relaxed">"La calidad de la ropa de GIOCONEX es excepcional. Entreno todos los días y mis remeras siguen como nuevas después de meses."</p>
-        </article>
 
-        <article class="min-w-[380px] md:min-w-[420px] bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-10 shadow-2xl professional-card animated-border">
-          <div class="flex items-start space-x-6 mb-8">
-            <img 
-              class="w-20 h-20 rounded-full border-4 border-yellow-400 flex-shrink-0 object-cover" 
-              src="https://randomuser.me/api/portraits/men/32.jpg" 
-              alt="Foto de Carlos Ruiz"
-              loading="lazy"
+        <div class="cyber-card p-8 rounded-2xl">
+              <div class="flex items-center mb-6">
+                <img 
+              class="w-16 h-16 rounded-full border-4 border-yellow-500 mr-4" 
+              src="https://randomuser.me/api/portraits/men/42.jpg" 
+              alt="Marcus Chen"
             />
             <div>
-              <h4 class="font-bold text-yellow-300 text-xl">Carlos Ruiz</h4>
-              <p class="text-orange-400 text-base font-semibold">Entrenador Personal</p>
-              <p class="text-gray-200 text-sm">Mar del Plata</p>
+              <h4 class="font-bold orbitron neon-pink text-lg">Marcus Chen</h4>
+              <p class="text-yellow-500 text-sm">Cliente Satisfecho</p>
+                </div>
+              </div>
+          <p class="text-gray-300 italic">"La calidad de los materiales es excepcional. Mis bolsos de Chillbags duran años sin perder su estilo."</p>
+              <div class="flex mt-4">
+            <span class="neon-yellow">★★★★★</span>
+              </div>
             </div>
-          </div>
-          <p class="italic text-gray-100 text-lg leading-relaxed">"Recomiendo GIOCONEX a todos mis clientes. Tienen la mejor variedad de ropa deportiva de la ciudad."</p>
-        </article>
 
-        <article class="min-w-[380px] md:min-w-[420px] bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-10 shadow-2xl professional-card animated-border">
-          <div class="flex items-start space-x-6 mb-8">
-            <img 
-              class="w-20 h-20 rounded-full border-4 border-orange-400 flex-shrink-0 object-cover" 
-              src="https://randomuser.me/api/portraits/women/44.jpg" 
-              alt="Foto de Lucía Pérez"
-              loading="lazy"
+        <div class="cyber-card p-8 rounded-2xl">
+              <div class="flex items-center mb-6">
+                <img 
+              class="w-16 h-16 rounded-full border-4 border-yellow-600 mr-4" 
+              src="https://randomuser.me/api/portraits/women/24.jpg" 
+              alt="Sofia Luna"
             />
             <div>
-              <h4 class="font-bold text-orange-300 text-xl">Lucía Pérez</h4>
-              <p class="text-yellow-400 text-base font-semibold">Instructora de Yoga</p>
-              <p class="text-gray-200 text-sm">Mar del Plata</p>
+              <h4 class="font-bold orbitron neon-yellow text-lg">Sofia Luna</h4>
+              <p class="text-yellow-500 text-sm">Cliente Satisfecha</p>
             </div>
           </div>
-          <p class="italic text-gray-100 text-lg leading-relaxed">"La atención al cliente es excelente y siempre encuentro exactamente lo que busco. ¡Los precios son muy convenientes!"</p>
-        </article>
-
-        <article class="min-w-[380px] md:min-w-[420px] bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-10 shadow-2xl professional-card animated-border">
-          <div class="flex items-start space-x-6 mb-8">
-            <img 
-              class="w-20 h-20 rounded-full border-4 border-yellow-400 flex-shrink-0 object-cover" 
-              src="https://randomuser.me/api/portraits/men/21.jpg" 
-              alt="Foto de Diego Martínez"
-              loading="lazy"
-            />
-            <div>
-              <h4 class="font-bold text-yellow-300 text-xl">Diego Martínez</h4>
-              <p class="text-orange-400 text-base font-semibold">Runner</p>
-              <p class="text-gray-200 text-sm">Mar del Plata</p>
-            </div>
+          <p class="text-gray-300 italic">"Los diseños son únicos y modernos. Chillbags siempre tiene algo especial que se adapta a mi estilo."</p>
+          <div class="flex mt-4">
+            <span class="neon-yellow">★★★★★</span>
           </div>
-          <p class="italic text-gray-100 text-lg leading-relaxed">"Desde que compro en GIOCONEX, mi rendimiento mejoró notablemente. La ropa es súper cómoda y permite total libertad de movimiento."</p>
-        </article>
-
-        <article class="min-w-[380px] md:min-w-[420px] bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-10 shadow-2xl professional-card animated-border">
-          <div class="flex items-start space-x-6 mb-8">
-            <img 
-              class="w-20 h-20 rounded-full border-4 border-orange-400 flex-shrink-0 object-cover" 
-              src="https://randomuser.me/api/portraits/women/39.jpg" 
-              alt="Foto de Ana Fernández"
-              loading="lazy"
-            />
-            <div>
-              <h4 class="font-bold text-orange-300 text-xl">Ana Fernández</h4>
-              <p class="text-yellow-400 text-base font-semibold">Fitness Enthusiast</p>
-              <p class="text-gray-200 text-sm">Mar del Plata</p>
-            </div>
-          </div>
-          <p class="italic text-gray-100 text-lg leading-relaxed">"GIOCONEX tiene las mejores marcas a precios increíbles. Ya soy cliente habitual y siempre quedo satisfecha con mis compras."</p>
-        </article>
-
+        </div>
+      </div>
       </div>
     </section>
 
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="bg-gradient-to-br from-gray-800 to-gray-900 text-white py-20 mt-28">
-    <div class="max-w-7xl mx-auto px-6 md:px-12">
+  <!-- CONTACT FOOTER - CYBER TERMINAL -->
+  <footer id="contacto" class="bg-black text-white py-20 border-t-2 border-blue-500">
+    <div class="max-w-7xl mx-auto px-6">
       <div class="grid md:grid-cols-3 gap-12 mb-16">
-        <div>
-          <h3 class="text-3xl font-bold text-orange-400 mb-6">GIOCONEX</h3>
-          <p class="text-gray-200 mb-6 text-lg">Más de 5 años ofreciendo la mejor ropa deportiva de Mar del Plata. Calidad, comodidad y estilo para tu entrenamiento.</p>
-          <div class="flex space-x-6">
-            <a href="#" class="text-orange-400 hover:text-yellow-400 transition duration-300 hover:scale-110 transform">
-              <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
-            </a>
-            <a href="https://www.instagram.com" target="_blank" class="text-yellow-400 hover:text-orange-400 transition duration-300 hover:scale-110 transform">
-              <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-            </a>
-            <a href="https://www.facebook.com" target="_blank" class="text-orange-400 hover:text-yellow-400 transition duration-300 hover:scale-110 transform">
-              <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-            </a>
-          </div>
-        </div>
         
-        <div>
-          <h4 class="text-2xl font-bold text-yellow-400 mb-6">Información de Contacto</h4>
-          <div class="space-y-4 text-gray-200 text-lg">
-            <div class="flex items-center space-x-4">
-              <svg class="w-6 h-6 text-orange-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
-              <span>Pigue 1910, Mar del Plata</span>
+        <!-- Company Info -->
+        <div class="md:col-span-1">
+          <div class="flex items-center mb-8">
+            <div class="diamond mr-4 pulse-neon">
+              <div class="diamond-content text-black font-bold">T</div>
             </div>
-            <div class="flex items-center space-x-4">
-              <svg class="w-6 h-6 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
-              <a href="mailto:gioconex@gmail.com" class="hover:text-orange-300 transition">gioconex@gmail.com</a>
+            <h3 class="text-4xl font-bold orbitron neon-cyan">Chillbags</h3>
+          </div>
+          <p class="text-gray-300 mb-8 text-lg leading-relaxed">
+            Somos especialistas en bolsos y accesorios de moda, ofreciendo diseños únicos y calidad premium para complementar tu estilo.
+          </p>
+          <div class="flex space-x-4">
+            <div class="w-12 h-12 cyber-card rounded-full flex items-center justify-center">
+              <span class="neon-cyan">📱</span>
             </div>
-            <div class="flex items-center space-x-4">
-              <svg class="w-6 h-6 text-orange-400" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
-              <a href="tel:+5492236025707" class="hover:text-yellow-300 transition">+54 9 223 602-5707</a>
+            <div class="w-12 h-12 cyber-card rounded-full flex items-center justify-center">
+              <span class="neon-pink">💼</span>
             </div>
-            <div class="flex items-center space-x-4">
-              <svg class="w-6 h-6 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
-              <span>Tienda de Ropa Deportiva</span>
+            <div class="w-12 h-12 cyber-card rounded-full flex items-center justify-center">
+              <span class="neon-yellow">🌐</span>
             </div>
           </div>
         </div>
         
+        <!-- Contact Info -->
         <div>
-          <h4 class="text-2xl font-bold text-orange-400 mb-6">Horarios de Atención</h4>
-          <div class="space-y-3 text-gray-200 text-lg">
-            <p><strong class="text-yellow-300">Lunes a Viernes:</strong> 9:00 - 20:00</p>
-            <p><strong class="text-orange-300">Sábados:</strong> 9:00 - 18:00</p>
-            <p><strong class="text-yellow-300">Domingos:</strong> 10:00 - 16:00</p>
+          <h4 class="text-2xl font-bold orbitron neon-pink mb-8">▶ CONEXIÓN DIRECTA</h4>
+          <div class="space-y-6 text-gray-300">
+            <div class="flex items-start space-x-4">
+              <div class="diamond">
+                <div class="diamond-content text-black text-xs">📍</div>
+              </div>
+              <span>Irigoyen 343, Mar Del Plata.</span>
+            </div>
+            <div class="flex items-center space-x-4">
+              <div class="diamond">
+                <div class="diamond-content text-black text-xs">📞</div>
+              </div>
+              <a href="tel:+5491164584704" class="hover:text-yellow-500 transition text-lg font-bold orbitron">+5491164584704</a>
+            </div>
+            <div class="flex items-center space-x-4">
+              <div class="diamond">
+                <div class="diamond-content text-black text-xs">✉️</div>
+              </div>
+              <span>contacto@chillbags.com</span>
+            </div>
+            <div class="flex items-center space-x-4">
+              <div class="diamond">
+                <div class="diamond-content text-black text-xs">🆔</div>
+              </div>
+              <span>CUIL: 20442956201</span>
+            </div>
           </div>
-          <div class="mt-6">
-            <a href="https://wa.me/5492236025707" target="_blank" class="inline-flex items-center space-x-2 bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg transition duration-300 hover:scale-105 transform">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.777-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.336-.445-.342-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
-              </svg>
-              <span>Consultar por WhatsApp</span>
-            </a>
+        </div>
+        
+        <!-- Operating Hours -->
+        <div>
+          <h4 class="text-2xl font-bold orbitron neon-yellow mb-8">▶ HORARIOS Chillbags</h4>
+          <div class="space-y-4 text-gray-300">
+            <div class="cyber-card p-4 rounded-lg">
+              <p class="font-bold neon-cyan mb-2 orbitron">ATENCIÓN</p>
+              <p>Lun-Vie: 09:00-19:00</p>
+              <p>Sáb: 10:00-14:00</p>
+            </div>
+            <div class="cyber-card p-4 rounded-lg">
+              <p class="font-bold neon-pink mb-2 orbitron">ENVÍOS</p>
+              <p>A TODO EL PAÍS</p>
+              <p>RÁPIDO Y SEGURO</p>
+            </div>
           </div>
         </div>
       </div>
       
-      <div class="border-t border-gray-600 pt-10 text-center">
-        <p class="text-orange-300 mb-3 text-lg">GIOCONEX - Ropa Deportiva de Calidad</p>
-        <p class="text-gray-300">© 2024 Todos los derechos reservados</p>
+      <div class="border-t-2 border-yellow-600 pt-12 text-center">
+        <div class="diamond mx-auto mb-6 pulse-neon">
+          <div class="diamond-content text-black font-bold">💎</div>
+        </div>
+        <p class="neon-cyan mb-3 text-xl font-bold orbitron">Chillbags - BOLSOS Y ACCESORIOS DE MODA</p>
+        <p class="text-gray-400">© 2024 Todos los derechos reservados | Diseñado en el futuro digital</p>
       </div>
     </div>
   </footer>
+
+  <!-- CYBER WHATSAPP BUTTON -->
+  <a 
+    href="https://wa.me/5491164584704?text=¡Hola%20Chillbags!%20👜%20Me%20interesa%20conocer%20sus%20productos" 
+    target="_blank"
+    class="fixed bottom-8 right-8 whatsapp-cyber text-white p-6 rounded-full shadow-2xl z-50 transition-all duration-300 hover:scale-110 group"
+    aria-label="Contactar por WhatsApp"
+  >
+    <div class="relative">
+      <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.488"/>
+      </svg>
+      <!-- Cyber notification -->
+      <div class="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-cyan-400 to-pink-500 rounded-full flex items-center justify-center text-xs font-bold pulse-neon">
+        ▶
+      </div>
+    </div>
+  </a>
 
 </body>
 </html>
